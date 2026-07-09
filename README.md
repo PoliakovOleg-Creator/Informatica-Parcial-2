@@ -1,1 +1,3 @@
-# Informatica-Parcial-2
+Oleg Poliakov
+Segundo Parcial - Informática General 
+Artes Multimediales - UNA
