@@ -40,3 +40,30 @@
                 <!-- Botón requerido para cambiar el diseño de la galería -->
                 <button id="btn-cambiar-estilo" type="button">Cambiar Diseño</button>
             </section>
+             <hr>
+
+            <!-- PARTE 3: EJERCICIO DE CONTROL DE LUCES (Consigna ejercicio 2.txt) -->
+            <!-- ACA USE IA: Para que los formularios se vean ordenados y se puedan ocultar/mostrar -->
+            <section id="ejercicio-luces">
+                <h2>Control de Luces Móviles</h2>
+                
+                <!-- Paso 1: Cantidad de obras -->
+                <form id="form-inicio">
+                    <label for="cant-obras">¿Cuántas obras registrar?</label>
+                    <input type="number" id="cant-obras" min="1">
+                    <button type="button" id="btn-comenzar">Empezar Carga</button>
+                </form>
+
+                <!-- Paso 2: Carga de cada obra (se muestra por JS) -->
+                <form id="form-obras" style="display:none;">
+                    <fieldset>
+                        <legend id="titulo-carga">Datos de la Obra 1</legend>
+                        <label for="nombre-obra">Nombre:</label>
+                        <input type="text" id="nombre-obra">
+                        <label for="luces-obra">Luces móviles:</label>
+                        <input type="number" id="luces-obra" min="1">
+                        <label for="horas-obra">Horas de uso diario:</label>
+                        <input type="number" id="horas-obra" min="1">
+                        <button type="button" id="btn-guardar-obra">Guardar Obra</button>
+                    </fieldset>
+                </form>
