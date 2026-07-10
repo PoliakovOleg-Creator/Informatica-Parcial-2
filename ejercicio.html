@@ -67,3 +67,29 @@
                         <button type="button" id="btn-guardar-obra">Guardar Obra</button>
                     </fieldset>
                 </form>
+                <!-- Paso 3: Costos (se muestra al final) -->
+                <form id="form-calculos" style="display:none;">
+                    <label for="consumo-luz">Consumo por luz (kWh):</label>
+                    <input type="number" id="consumo-luz" step="0.01">
+                    <label for="costo-kwh">Costo por kWh ($):</label>
+                    <input type="number" id="costo-kwh" step="0.01">
+                    <button type="button" id="btn-finalizar">Ver Resultados</button>
+                </form>
+
+                <!-- Resultados y Reinicio -->
+                <div id="zona-resultados" style="display:none;"></div>
+                <button id="btn-reset" style="display:none;" type="button">Reiniciar Sistema</button>
+            </section>
+        </main>
+
+        <footer>
+            <address>Contacto: <a href="mailto:rafael@artedigital.com">rafael@artedigital.com</a></address>
+            <p>&copy; 2026 - Segundo Parcial de Informática General</p>
+            <div class="ia-info">
+                <p><strong>Uso de IA:</strong> Se utilizó IA para estructurar la lógica de los formularios dinámicos y validar que los cálculos matemáticos sean correctos según la consigna.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
