@@ -78,3 +78,37 @@ document.querySelector('#btn-guardar-obra').addEventListener('click', function()
         alert("Todos los datos son obligatorios y deben ser positivos");
     }
 });
+document.querySelector('#btn-finalizar').addEventListener('click', function() {
+    let consumoH = parseFloat(document.querySelector('#consumo-luz').value);
+    let costoK = parseFloat(document.querySelector('#costo-kwh').value);
+
+    if (consumoH > 0 && costoK > 0) {
+        let totalKWh = 0;
+        let obraMasLenta = obrasRegistradas;
+        let masDe20 = 0;
+
+        obrasRegistradas.forEach(function(o) {
+            totalKWh += (o.luces * o.horas * consumoH);
+            if (o.horas > obraMasLenta.horas) obraMasLenta = o;
+            if (o.luces > 20) masDe20++;
+        });
+
+        let promedio = totalKWh / cantidadTotal;
+        let porcentaje = (masDe20 / cantidadTotal) * 100;
+
+        let divRes = document.querySelector('#zona-resultados');
+        divRes.style.display = "block";
+        divRes.innerHTML = `
+            <h3>Informe Final</h3>
+            <p>1. Consumo total: ${totalKWh.toFixed(2)} kWh. Promedio: ${promedio.toFixed(2)} kWh.</p>
+            <p>2. Obra con más tiempo: ${obraMasLenta.nombre}. Costo diario: $${(obraMasLenta.luces * obraMasLenta.horas * consumoH * costoK).toFixed(2)}</p>
+            <p>3. Obras con más de 20 luces: ${porcentaje}%</p>
+        `;
+        document.querySelector('#form-calculos').style.display = "none";
+        document.querySelector('#btn-reset').style.display = "block";
+    }
+});
+
+document.querySelector('#btn-reset').addEventListener('click', function() {
+    location.reload();
+});
