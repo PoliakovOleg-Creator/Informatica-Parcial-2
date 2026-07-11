@@ -33,3 +33,41 @@
     background-color: #222;
     color: white; /* Texto blanco para contrastar */
 }
+/* Formularios del ejercicio de luces */
+/* ACA USE IA: Para ordenar los inputs en columna usando flex-direction */
+#ejercicio-luces form {
+    background-color: #e9e9e9;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Elementos del formulario uno debajo del otro */
+    gap: 1rem;
+    border-left: 4px solid #00bcd4;
+}
+
+#ejercicio-luces input {
+    padding: 0.5rem;
+    font-family: Arial, sans-serif; /* Fuente estándar para textos */
+}
+
+#ejercicio-luces button, #btn-dato, #btn-cambiar-estilo {
+    background-color: #333;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#ejercicio-luces button:hover, #btn-dato:hover, #btn-cambiar-estilo:hover {
+    background-color: #00bcd4;
+}
+
+/* Caja de resultados finales */
+#zona-resultados {
+    background-color: #d4edda;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid #28a745;
+}
