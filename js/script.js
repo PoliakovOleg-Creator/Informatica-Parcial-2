@@ -13,13 +13,14 @@ document.querySelector('#btn-dato').addEventListener('click', function() {
     document.querySelector('#pantalla-dato').innerHTML = `<p>${listaDatos[azar]}</p>`;
 });
 // --- 2. GALERÍA DINÁMICA (Objetos y forEach) ---
-// ACA USE IA: Para armar el array de objetos con las obras recomendadas
+// ACA USE IA: Para ajustar los nombres de las imágenes entregadas por la cátedra y agregar las que faltaban
 const misObras = [
-    { titulo: "Pulse Room", ano: 2006, img: "img/obra1.jpg" },
-    { titulo: "Vectorial Elevation", ano: 1999, img: "img/obra2.jpg" },
-    { titulo: "Body Movies", ano: 2001, img: "img/obra3.jpg" },
-    { titulo: "Cloud Display", ano: 2016, img: "img/obra4.jpg" },
-    { titulo: "33 Questions per Minute", ano: 2000, img: "img/obra5.jpg" }
+    { titulo: "Pulse Room", ano: 2006, img: "img/lozano-hemmer-1.jpg" },
+    { titulo: "Vectorial Elevation", ano: 1999, img: "img/lozano-hemmer-2.jpg" },
+    { titulo: "Body Movies", ano: 2001, img: "img/lozano-hemmer-3.jpg" },
+    // Estas dos las tuve que descargar de internet como pide la consigna
+    { titulo: "Cloud Display", ano: 2016, img: "img/lozano-hemmer-4.jpg" },
+    { titulo: "33 Questions per Minute", ano: 2000, img: "img/lozano-hemmer-5.jpg" }
 ];
 
 const contenedor = document.querySelector('#contenedor-galeria');
@@ -35,7 +36,7 @@ misObras.forEach(function(obra) {
     contenedor.appendChild(art);
 });
 
-// Botón para cambiar diseño (consigna [7])
+// Botón para cambiar diseño (consigna)
 document.querySelector('#btn-cambiar-estilo').addEventListener('click', function() {
     contenedor.classList.toggle('diseno-alternativo');
     alert("Diseño de galería modificado");
