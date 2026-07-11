@@ -15,12 +15,12 @@ document.querySelector('#btn-dato').addEventListener('click', function() {
 // --- 2. GALERÍA DINÁMICA (Objetos y forEach) ---
 // ACA USE IA: Para ajustar los nombres de las imágenes entregadas por la cátedra y agregar las que faltaban
 const misObras = [
-    { titulo: "Pulse Room", ano: 2006, img: "img/lozano-hemmer-1.jpg" },
-    { titulo: "Vectorial Elevation", ano: 1999, img: "img/lozano-hemmer-2.jpg" },
-    { titulo: "Body Movies", ano: 2001, img: "img/lozano-hemmer-3.jpg" },
+    { titulo: "Vicious Circular Dispersion", ano: 2018, img: "img/lozano-hemmer-1.jpg" },
+    { titulo: "Bilateral Time Slicer", ano: 2016, img: "img/lozano-hemmer-2.jpg" },
+    { titulo: "Pulse Topology", ano: 2021, img: "img/lozano-hemmer-3.jpg" },
     // Estas dos las tuve que descargar de internet como pide la consigna
-    { titulo: "Cloud Display", ano: 2016, img: "img/lozano-hemmer-4.jpg" },
-    { titulo: "33 Questions per Minute", ano: 2000, img: "img/lozano-hemmer-5.jpg" }
+    { titulo: "Zoom Pavilion", ano: 2015, img: "img/lozano-hemmer-4.jpg" },
+    { titulo: "Cloud Display", ano: 2019, img: "img/lozano-hemmer-5.jpg" }
 ];
 
 const contenedor = document.querySelector('#contenedor-galeria');
