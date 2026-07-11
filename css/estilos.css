@@ -1,0 +1,10 @@
+/* --- ESTILOS PARA LA PÁGINA DE EJERCICIOS (GALERÍA Y FORMULARIOS) --- */
+
+/* ACA PEDÍ AYUDA A LA IA: Para que las tarjetas de la galería queden todas del mismo tamaño usando flexbox y porcentajes */
+#contenedor-galeria {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas bajen si no hay espacio */
+    justify-content: space-between;
+    gap: 2%; /* Espaciado en porcentajes según consigna */
+    margin-top: 1.5rem; /* Espaciado en rem según consigna */
+}
