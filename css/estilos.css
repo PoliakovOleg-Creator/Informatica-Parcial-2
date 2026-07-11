@@ -1,15 +1,102 @@
-/* --- ESTILOS PARA LA PÁGINA DE EJERCICIOS (GALERÍA Y FORMULARIOS) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* IA AYUDA: Para calcular mejor los tamaños de las cajas */
+}
 
-/* ACA PEDÍ AYUDA A LA IA: Para que las tarjetas de la galería queden todas del mismo tamaño usando flexbox y porcentajes */
+/* Estilos del body y fondo */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-image: url("../img/fondo.jpg"); 
+    background-attachment: fixed;
+    background-repeat: repeat; /* Arreglo para que la imagen no se pixele */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Contenedor principal */
+#contenedor {
+    background-color: rgba(255, 255, 255, 0.95);
+    max-width: 1000px;
+    width: 100%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+}
+
+/* Fuentes para titulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+/* Menu de navegacion */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    background-color: #222;
+    padding: 1rem;
+}
+
+nav a:link { color: white; text-decoration: none; }
+nav a:visited { color: #ccc; }
+nav a:hover { color: #00bcd4; text-decoration: underline; }
+nav a:active { color: #ffeb3b; }
+
+/* Pagina de inicio (3 columnas iguales) */
+.fila-columnas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2%;
+    margin-top: 2rem;
+}
+
+.fila-columnas article {
+    flex: 1; 
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* Pagina de bio (2 columnas distintas) */
+.dos-columnas {
+    display: flex;
+    justify-content: space-between;
+    gap: 3%;
+    margin-top: 2.5rem;
+}
+
+.columna-angosta {
+    flex: 0 0 27%; 
+    background-color: #e9e9e9;
+    padding: 1.5rem;
+    border-left: 4px solid #222;
+}
+
+.columna-ancha {
+    flex: 1; 
+    background-color: #fff;
+    padding: 1.5rem;
+}
+
+/* Pagina de ejercicios - Galeria */
+/* ACA PEDÍ AYUDA A LA IA: Para que las tarjetas queden del mismo tamaño usando flexbox y porcentajes */
 #contenedor-galeria {
     display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas bajen si no hay espacio */
+    flex-wrap: wrap; 
     justify-content: space-between;
-    gap: 2%; /* Espaciado en porcentajes según consigna */
-    margin-top: 1.5rem; /* Espaciado en rem según consigna */
+    gap: 2%; 
+    margin-top: 1.5rem; 
 }
+
 .tarjeta-obra {
-    flex: 1 1 30%; /* Ocupan aproximadamente un tercio del ancho */
+    flex: 1 1 30%; 
     background-color: #f4f4f4;
     padding: 1rem;
     border: 1px solid #ccc;
@@ -18,38 +105,40 @@
 }
 
 .tarjeta-obra img {
-    max-width: 100%; /* Imágenes fluidas */
+    max-width: 100%; 
     border-bottom: 2px solid #222;
     margin-bottom: 1rem;
 }
-/* Cambio de diseño de la galería al hacer click en el botón (Requerimiento de consigna) */
+
+/* Cambio de diseno con el boton */
 .diseno-alternativo {
-    flex-direction: column; /* Cambia a una sola columna */
+    flex-direction: column; 
     align-items: center;
 }
 
 .diseno-alternativo .tarjeta-obra {
-    width: 80%; /* Más anchas en el diseño alternativo */
+    width: 80%; 
     background-color: #222;
-    color: white; /* Texto blanco para contrastar */
+    color: white; 
 }
-/* Formularios del ejercicio de luces */
-/* ACA USE IA: Para ordenar los inputs en columna usando flex-direction */
+
+/* Formularios de luces */
 #ejercicio-luces form {
     background-color: #e9e9e9;
     padding: 1.5rem;
     margin-top: 1.5rem;
     display: flex;
-    flex-direction: column; /* Elementos del formulario uno debajo del otro */
+    flex-direction: column; 
     gap: 1rem;
     border-left: 4px solid #00bcd4;
 }
 
 #ejercicio-luces input {
     padding: 0.5rem;
-    font-family: Arial, sans-serif; /* Fuente estándar para textos */
+    font-family: Arial, sans-serif; 
 }
 
+/* Botones */
 #ejercicio-luces button, #btn-dato, #btn-cambiar-estilo {
     background-color: #333;
     color: white;
@@ -64,10 +153,26 @@
     background-color: #00bcd4;
 }
 
-/* Caja de resultados finales */
+/* Resultados */
 #zona-resultados {
     background-color: #d4edda;
     padding: 1.5rem;
     margin-top: 2rem;
     border: 1px solid #28a745;
+}
+
+/* Footer de todas las paginas */
+footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #333;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.ia-declaracion {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-style: italic;
 }
