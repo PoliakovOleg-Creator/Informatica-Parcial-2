@@ -22,3 +22,14 @@
     border-bottom: 2px solid #222;
     margin-bottom: 1rem;
 }
+/* Cambio de diseño de la galería al hacer click en el botón (Requerimiento de consigna) */
+.diseno-alternativo {
+    flex-direction: column; /* Cambia a una sola columna */
+    align-items: center;
+}
+
+.diseno-alternativo .tarjeta-obra {
+    width: 80%; /* Más anchas en el diseño alternativo */
+    background-color: #222;
+    color: white; /* Texto blanco para contrastar */
+}
