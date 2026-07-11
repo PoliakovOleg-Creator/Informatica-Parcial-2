@@ -40,3 +40,41 @@ document.querySelector('#btn-cambiar-estilo').addEventListener('click', function
     contenedor.classList.toggle('diseno-alternativo');
     alert("Diseño de galería modificado");
 });
+// --- 3. SISTEMA DE LUCES (Ejercicio 2.txt) ---
+// ACA USE IA: Me ayudó con la lógica de los acumuladores para sacar el promedio y el porcentaje
+let obrasRegistradas = [];
+let cantidadTotal = 0;
+let contador = 0;
+
+document.querySelector('#btn-comenzar').addEventListener('click', function() {
+    cantidadTotal = parseInt(document.querySelector('#cant-obras').value);
+    if (cantidadTotal > 0) {
+        document.querySelector('#form-inicio').style.display = "none";
+        document.querySelector('#form-obras').style.display = "block";
+    } else {
+        alert("Ingresa una cantidad válida");
+    }
+});
+
+document.querySelector('#btn-guardar-obra').addEventListener('click', function() {
+    let nom = document.querySelector('#nombre-obra').value;
+    let luc = parseInt(document.querySelector('#luces-obra').value);
+    let hor = parseInt(document.querySelector('#horas-obra').value);
+
+    if (nom !== "" && luc > 0 && hor > 0) {
+        obrasRegistradas.push({ nombre: nom, luces: luc, horas: hor });
+        contador++;
+        
+        if (contador < cantidadTotal) {
+            document.querySelector('#titulo-carga').innerText = `Datos de la Obra ${contador + 1}`;
+            document.querySelector('#nombre-obra').value = "";
+            document.querySelector('#luces-obra').value = "";
+            document.querySelector('#horas-obra').value = "";
+        } else {
+            document.querySelector('#form-obras').style.display = "none";
+            document.querySelector('#form-calculos').style.display = "block";
+        }
+    } else {
+        alert("Todos los datos son obligatorios y deben ser positivos");
+    }
+});
