@@ -79,19 +79,25 @@ document.querySelector('#btn-guardar-obra').addEventListener('click', function()
         alert("Todos los datos son obligatorios y deben ser positivos");
     }
 });
-document.querySelector('#btn-finalizar').addEventListener('click', function() {
+document.querySelector('#btn-finalizar').addEventListener('click', function(e) {
+    e.preventDefault();
+
     let consumoH = parseFloat(document.querySelector('#consumo-luz').value);
     let costoK = parseFloat(document.querySelector('#costo-kwh').value);
 
     if (consumoH > 0 && costoK > 0) {
         let totalKWh = 0;
-        let obraMasLenta = obrasRegistradas;
+        let obraMasLenta = obrasRegistradas[ 0 ];
         let masDe20 = 0;
 
         obrasRegistradas.forEach(function(o) {
             totalKWh += (o.luces * o.horas * consumoH);
-            if (o.horas > obraMasLenta.horas) obraMasLenta = o;
-            if (o.luces > 20) masDe20++;
+            if (o.horas > obraMasLenta.horas) {
+                obraMasLenta = o;
+            }
+            if (o.luces > 20) {
+                masDe20++;
+            }
         });
 
         let promedio = totalKWh / cantidadTotal;
@@ -107,9 +113,12 @@ document.querySelector('#btn-finalizar').addEventListener('click', function() {
         `;
         document.querySelector('#form-calculos').style.display = "none";
         document.querySelector('#btn-reset').style.display = "block";
+    } else {
+        alert("Ingresa valores válidos para calcular");
     }
 });
 
-document.querySelector('#btn-reset').addEventListener('click', function() {
+document.querySelector('#btn-reset').addEventListener('click', function(e) {
+    e.preventDefault();
     location.reload();
 });
