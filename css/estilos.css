@@ -8,3 +8,17 @@
     gap: 2%; /* Espaciado en porcentajes según consigna */
     margin-top: 1.5rem; /* Espaciado en rem según consigna */
 }
+.tarjeta-obra {
+    flex: 1 1 30%; /* Ocupan aproximadamente un tercio del ancho */
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tarjeta-obra img {
+    max-width: 100%; /* Imágenes fluidas */
+    border-bottom: 2px solid #222;
+    margin-bottom: 1rem;
+}
